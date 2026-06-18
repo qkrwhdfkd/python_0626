@@ -34,3 +34,12 @@ LLM 프롬프트 명령어
 
 '''
 
+# 1. 언론사별 뉴스 발행량 시리즈 생성
+media_counts = df["언론사"].value_counts()
+
+# 2. 반드시 콘솔에 시리즈 구조와 데이터 확인
+print("=== [콘솔 확인] 언론사별 뉴스 발행량 시리즈 ===")
+print(media_counts)
+print("Type:", type(media_counts))
+print("============================================\n")
+
