@@ -11,21 +11,11 @@ import seaborn as sns
 file_path = './원본/한국언론진흥재단_뉴스빅데이터_메타데이터_노인_20011231.csv' 
 df = pd.read_csv(file_path, encoding='cp949')
 
+df_clean = df[['일자', '통합 분류1']].dropna()
 
-category_counts = df["통합 분류1"].value_counts().head(10)  
+date_category_counts = df_clean.groupby(['일자', '통합 분류1']).size()
 
-print("=== [콘솔 확인] 통합 분류1  카테고리 시리즈 ===")
-print(category_counts)
-print("데이터 타입:", type(category_counts))
+print("=== [콘솔 확인] 날짜별 카테고리 빈도수 (기본형) ===")
+print(date_category_counts)
 print("====================================================\n")
 
-
-available_dates = df["일자"].dropna()
-
-first_date = available_dates.min()
-last_date = available_dates.max()
-
-print("=== [콘솔 확인] 데이터 분석 기간 ===")
-print(f"최초 날짜 (시작일): {first_date}")
-print(f"마지막 날짜 (종료일): {last_date}")
-print("====================================================\n")
