@@ -35,6 +35,7 @@ found_word = None
 if any(searchword in word for searchword in base_stop_words):
     print(f"위의 검수단어가 포함되어있습니다.")
 
+
 findwords = []
 for searchword in base_stop_words:
     if searchword in word:

@@ -27,6 +27,7 @@ for target in base_stop_words:
     while True:
         # start_index 이후부터 target 단어를 찾습니다.
         pos = word.find(target, start_index)
+         # .find() 는 찾아서 그 위치값을 출력하고 작업을 종료함. .find(a,b) 는 a를 찾아 위치값을 출력하고, 그 후 다른작업을 할 시작점을 b로 지정해준 것. 이 코드에서 .find(a,b)의 다음 작업을 진행시켜주는 것은 while
         
         
         # 더 이상 단어가 발견되지 않으면 (-1) 반복을 멈춥니다.
