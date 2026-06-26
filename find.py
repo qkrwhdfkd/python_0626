@@ -6,7 +6,10 @@
 
 word = "서  울\n시청"
 
+
+
 print(word.find("서"))   # 출력: 0
 print(word.find("울"))   # 출력: 3  (앞에 공백 2칸이 채워져서 3번 인덱스가 됨)
 print(word.find("시청")) # 출력: 5  (줄바꿈 기호 \n 도 1칸으로 계산됨)
+
 
