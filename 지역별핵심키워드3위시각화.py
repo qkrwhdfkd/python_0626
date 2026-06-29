@@ -25,10 +25,11 @@ df_region['상세지역'] = df_region['통합 분류1'].apply(
 df_region['키워드'] = df_region['키워드'].fillna('')
 # 빈문자열이라도 삽입
 all_region_names = list(df_region['상세지역'].dropna().unique())
+# 중복없이 지역리스트 만들기
 
 
 def get_top_10_keywords(series):   
-    all_text = " ".join(series.astype(str))    
+    all_text = " ".join(series.astype(str))    # .join() 은 .split()과 반대개념의 메서드, 문자열을 하나씩 붙일때마다 사이에 공백을 넣으라는 의미
     words = [word.strip() for word in all_text.replace(',', ' ').split() if word.strip()]
     top_10 = [item[0] for item in Counter(words).most_common(5)]
     return top_10
